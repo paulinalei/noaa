@@ -1,10 +1,14 @@
-body { 
+html, body { 
+	height: 100vh;
+    width: 100vw;
 	margin: auto;
-	overflow: none;
- 
+	overflow: hidden;
+
     font-family: 'Lato', sans-serif;
+    color: #e6e6e5;
+    background-color: black;
 }
-canvas { width: 100%; height: 100% }
+canvas { width: 100vw; height: 100vh }
 * {
 	 margin: 0;
 	 padding: 0;
@@ -14,54 +18,160 @@ canvas { width: 100%; height: 100% }
 	z-index: 1;
 }
 
-.container{
-    position: relative;
+.titleCard{
+	width: 50vw;
+	height: 40vh;
+	background-color: #0c0c0c;
+}
 
+.descriptionContainer{
+	height: 20vh;
+	width: 80vw;
+	display: block;
+	margin: auto;
+}
+
+img{
+	display: block;
+	margin: auto;
+	max-height: 60vh;
+	max-width: 80vw;
+}
+
+#imgSrc{
+	font-size: 12px;
+}
+
+.imageContainer {
+    height: 80vh;
+    width: 100vw;
+}
+
+.centerDiv{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.centerRelative{
+	position: relative;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.largeF {
+    font-size: 40px;
+}
+
+.textContent {
+    height: 10vh;
+}
+.centerText{
+	text-align: center;
+}
+
+#title {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 300;
+    width: 40vw;
 }
 
 /* Columns CSS */
+.container{
+	display: flex;
+	flex-direction: column;
+}
+
 .block {
 	float: left;
 }
 
 #blockA {
-	width: 25%;
-	background-color: red;
+	width: 20vw;
+	height: 100vw;
 }
 
 #blockB {
-	width: 50%;
-	overflow-x: scroll;
+	width: 60vw;
 }
 
 #blockB1 {
 	text-align: center;
+	height: 10vh;
 }
 
-#panels {
-	overflow-x: scroll;
-	white-space: nowrap;
+#blockB2 {
+	text-align: center;
+	height: 90vh;
 }
 
 #blockC {
-	width: 25%;
-	display: inline-block;
+	width: 20vw;
+	height: 100vh;
+}
+
+#blockC1 {
+	height: 0vh;
+}
+
+#blockC2 {
+	height: 100vh;
+}
+
+.hide {
+	display: none;
+}
+
+#grid {
+    display: flex;
+    width: 60vw;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 3vh;
+}
+
+.noBottom{
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+	border-bottom: none;
+	border-top: none;
+}
+
+.noLeft{
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+	border-left: none;
 }
 
 /* Grid CSS */
-#grid {
-	display: inline-block;
+
+h1 {
+	font-color: white;
 }
 
+p {
+	font-color: white;
+	font-family: droid-serif, serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+}
 
 /* Legend CSS */
 
 #temp-legend {
 	z-index: 1;
 	background-color: rgba(255, 255, 255, 0.7);
-	margin: 10px;
 	width: 135px;
 	height: 100px;
+	display: block;
+	margin: auto;
 	right: 0;
 }
 
@@ -70,7 +180,8 @@ canvas { width: 100%; height: 100% }
     background-color: rgba(255, 255, 255, 0.7);
     width: 115px;
     height: 180px;
-    margin: 10px;
+    display: block;
+	margin: auto;
     right: 0;
 }
 
@@ -83,9 +194,9 @@ canvas { width: 100%; height: 100% }
 .legendTitle {
     text-align: center;
 	font-size: 16px;
-	margin: 5px;
+	margin-bottom: 15px;
 	font-weight: bold;
-	border-color: black;
+	border-color: #e6e6e5;
     border-bottom-style: solid;
     border-width: 1px;
 }
@@ -94,10 +205,44 @@ canvas { width: 100%; height: 100% }
 	stroke: black;
 }
 
-.legend-border{
-	border-color: black;
-	border-width: 2px;
+.lazyCenter{
+	display: block;
+	margin: auto;
+}
+
+.border{
+	border-color: white;
+	border-width: 1px;
 	border-style: solid;
+}
+
+#explanation {
+    padding-top: 15px;
+}
+
+.underline {
+    width: 30vw;
+    border-bottom-color: white;
+    border-bottom-style: dashed;
+    display: block;
+    margin: auto;
+    border-bottom-width: 2px;
+}
+
+.dottedBorder{
+	border-color: white;
+	border-width: 1px;
+	border-style: dashed;
+}
+
+div#legend-1 {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+div#legend-2 {
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
 .legend {
