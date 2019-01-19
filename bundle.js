@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "0e674131b1d7a1a8c12e";
+/******/ 	var hotCurrentHash = "05ff10f23299d55babe7";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -77198,11 +77198,13 @@ var interaction = {
                 $("#grid").append(panel);
                 var sections = ( currentStory['canvas'].length > 1)? 2 : 1;
                 var dimension = (window.innerHeight * .85) / sections;
+                var quality = 1000;
                 config['matrixData'] = matrixData;
-                config['height'] = dimension;
-                config['width'] = dimension;
-                config['cellWidth'] = dimension / _constants__WEBPACK_IMPORTED_MODULE_1__["SIZE"];
-                config['cellHeight'] = dimension / _constants__WEBPACK_IMPORTED_MODULE_1__["SIZE"];
+                config['img-dim'] = dimension
+                config['height'] = quality;
+                config['width'] = quality;
+                config['cellWidth'] = quality / _constants__WEBPACK_IMPORTED_MODULE_1__["SIZE"];
+                config['cellHeight'] = quality / _constants__WEBPACK_IMPORTED_MODULE_1__["SIZE"];
                 _render_scene__WEBPACK_IMPORTED_MODULE_2__["default"].draw(config);
             }
         }
@@ -77468,7 +77470,7 @@ __webpack_require__.r(__webpack_exports__);
 function loadMesh(config) {
 	const model = {
 		material: {
-			cloth: './src/img/clothweave.jpg',
+			cloth: './src/img/water.jpg',
 			wave: './src/img/arrow.png'
 		}
 	};
@@ -77480,8 +77482,17 @@ function loadMesh(config) {
 		var textures = result[0];
 	    _grid__WEBPACK_IMPORTED_MODULE_0__["default"].initGrid(textures,config['initialYear'],config);
 		config['renderer'].render( config['scene'], config['camera'] );
+
+		var divCanvas = document.getElementById(config['containerID']);
+		var canvas = divCanvas.getElementsByTagName('canvas')[0];
+		var dataurl = canvas.toDataURL();
+
+		//height is
+		var img = new Image(config['img-dim'],config['img-dim']);
+		img.src = canvas.toDataURL();
+		canvas.remove();
+		divCanvas.appendChild(img);
 		console.log("rendering...");
-		// return new THREE.Mesh(result[0], result[1]);
 	});
 }
 
