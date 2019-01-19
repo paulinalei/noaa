@@ -8,11 +8,19 @@ html, body {
     color: #e6e6e5;
     background-color: black;
 }
+
+a {
+	color: white;
+	text-align: center;
+	display: block;
+}
+
 canvas { width: 100vw; height: 100vh }
 * {
 	 margin: 0;
 	 padding: 0;
 }
+
 #slider {
 	position: absolute;
 	z-index: 1;
@@ -22,29 +30,65 @@ canvas { width: 100vw; height: 100vh }
 	width: 50vw;
 	height: 40vh;
 	background-color: #0c0c0c;
+	min-width: 630px;
+	min-height: 320px;
+}
+
+#title-explanation-src {
+	font-size: 12px;
+}
+
+.titleContent{
+	min-width: 630px;
+	min-height: 320px;
 }
 
 .descriptionContainer{
 	height: 20vh;
 	width: 80vw;
+	min-width: 880px;
+	min-height: 150px;
+	max-width: 925px;
+	max-height: 150px;
 	display: block;
 	margin: auto;
-}
-
-img{
-	display: block;
-	margin: auto;
-	max-height: 60vh;
-	max-width: 80vw;
+	font-family: 'Montserrat', sans-serif;
 }
 
 #imgSrc{
 	font-size: 12px;
 }
 
+.imgFix {
+    min-height: 440px;
+    padding-top: 50px;
+}
+
 .imageContainer {
     height: 80vh;
     width: 100vw;
+    min-width: 1200px;
+    display: block;
+    margin: auto;
+}
+
+#imageExplanation {
+    min-width: 1200px;
+    min-height: 800px;
+}
+
+#image{
+	display: block;
+	margin: auto;
+	max-height: 60vh;
+	max-width: 80vw;
+	min-height: 100%;
+}
+
+.cLegend {
+    height: 23px;
+    display: block;
+    margin: auto;
 }
 
 .centerDiv{
@@ -69,15 +113,18 @@ img{
 
 .textContent {
     height: 10vh;
+    min-height: 80px;
 }
 .centerText{
 	text-align: center;
 }
 
 #title {
-    font-family: proxima-nova, sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 300;
-    width: 40vw;
+    width: 100%;
+/*    margin-top: 50px;
+    min-width: inherit;*/
 }
 
 /* Columns CSS */
@@ -86,22 +133,28 @@ img{
 	flex-direction: column;
 }
 
-.block {
-	float: left;
+#blocks{
+	display: flex;
 }
 
 #blockA {
 	width: 20vw;
 	height: 100vw;
+	min-height: 1280px;
+    min-width: 255px;
 }
 
 #blockB {
 	width: 60vw;
+	min-width: 767px;
+	min-height: 806px;
 }
 
 #blockB1 {
 	text-align: center;
 	height: 10vh;
+	min-height: 80px;
+	min-width: 764px;
 }
 
 #blockB2 {
@@ -112,6 +165,8 @@ img{
 #blockC {
 	width: 20vw;
 	height: 100vh;
+	min-width: 255px;
+	min-height: 804px;
 }
 
 #blockC1 {
@@ -132,6 +187,7 @@ img{
     flex-flow: row wrap;
     justify-content: center;
     padding-top: 3vh;
+    min-width: 764px;
 }
 
 .noBottom{
@@ -157,7 +213,7 @@ h1 {
 
 p {
 	font-color: white;
-	font-family: droid-serif, serif;
+	font-family: 'Montserrat', serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 20px;
@@ -210,6 +266,12 @@ p {
 	margin: auto;
 }
 
+.titleFix{
+	min-width: 200px;
+	min-height: 120px;
+	padding-top: 50px;
+}
+
 .border{
 	border-color: white;
 	border-width: 1px;
@@ -217,7 +279,7 @@ p {
 }
 
 #explanation {
-    padding-top: 15px;
+    margin: 15px;
 }
 
 .underline {
@@ -246,9 +308,7 @@ div#legend-2 {
 }
 
 .legend {
-/*	position: fixed;
-    display: flex; */
     right: 0;
     bottom: 0;
-/*    margin: 10px;
-*/}
+    padding-top: 10vh;
+}
